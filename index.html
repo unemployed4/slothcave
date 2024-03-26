@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalmShadows | Homepage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* General styles */
+        .dark-grey-text {
+            color: #888; /* Dark grey color */
+        }
+        .light-white-text {
+            color: #d1d1d1; /* Dark grey color */
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        /* Header styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+            color: #fff;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        /* Dark mode toggle styles */
+        .dark-mode-toggle {
+            display: flex;
+            align-items: center;
+        }
+
+        .dark-mode-toggle label {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .dark-mode-toggle input[type="checkbox"] {
+            display: none;
+        }
+
+        .dark-mode-toggle .toggle-slider {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 20px;
+        }
+
+        .dark-mode-toggle .toggle-slider:before {
+            position: absolute;
+            content: '';
+            height: 16px;
+            width: 16px;
+            left: 2px;
+            bottom: 2px;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: 0.4s;
+        }
+
+        input:checked + .toggle-slider {
+            background-color: #2196F3;
+        }
+
+        input:checked + .toggle-slider:before {
+            transform: translateX(20px);
+        }
+
+        /* Main content styles */
+        main {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            color: #333;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .skills {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .skill {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .skill-label {
+            margin-right: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .skill-bar-container {
+            flex: 1;
+        }
+
+        .skill-bar {
+            background-color: #4CAF50;
+            height: 14px;
+            border-radius: 5px;
+            margin-right: 10px;
+            width: calc(100% - 60px); /* Adjust width based on label and percentage */
+        }
+
+        .skill-percent {
+            color: #333;
+        }
+
+        /* Contact form styles */
+        form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+
+        /* Dark mode styles */
+        .dark-mode {
+            background-color: #333;
+            color: #ccc;
+        }
+
+        .dark-mode main {
+            background-color: #222;
+            color: #ddd;
+        }
+
+        .dark-mode .skills {
+            color: #ddd;
+        }
+
+        .dark-mode .skill-bar {
+            background-color: #6bd100; /* Darker green */
+        }
+
+        .dark-mode form {
+            background-color: #222; /* Dark mode form background */
+        }
+
+        .dark-mode form label,
+        .dark-mode form input[type="text"],
+        .dark-mode form input[type="email"],
+        .dark-mode form textarea {
+            color: #ddd; /* Dark mode form text color */
+        }
+
+        .dark-mode form button {
+            background-color: #6bd100; /* Dark mode form button color */
+        }
+
+        .dark-mode form button:hover {
+            background-color: #4CAF50; /* Dark mode form button hover color */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>CalmShadows Website</h1>
+        <div class="dark-mode-toggle">
+            <label for="darkModeToggle">Dark Mode</label>
+            <input type="checkbox" id="darkModeToggle">
+            <span class="toggle-slider"></span>
+        </div>
+    </header>
+
+    <main class="container">
+    <header><p class="light-white-text">CalmShadows</p></header>    
+        <p class="dark-grey-text">We are the best minecraft server out there!</p>
+        
+        <section>
+            <h2>Skills</h2>
+            <div class="skills">
+                <div class="skill">
+                    <label class="skill-label">Minecraft</label>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" data-percent="99%"></div>
+                    </div>
+                    <div class="skill-percent">99%</div>
+                </div>
+                <div class="skill">
+                    <label class="skill-label">Building</label>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" data-percent="65%"></div>
+                    </div>
+                    <div class="skill-percent">65%</div>
+                </div>
+                <div class="skill">
+                    <label class="skill-label">Survival</label>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" data-percent="85%"></div>
+                    </div>
+                    <div class="skill-percent">85%</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Contact us</h2>
+            <form id="contact-form" method="POST" action="send_email.php">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        const darkModeStorageKey = 'darkMode';
+
+        // Check local storage for dark mode preference
+        const isDarkMode = localStorage.getItem(darkModeStorageKey) === 'true';
+
+        // Set initial dark mode state based on local storage
+        if (isDarkMode) {
+            body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
+        }
+
+        // Toggle dark mode based on user interaction
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem(darkModeStorageKey, 'true');
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem(darkModeStorageKey, 'false');
+            }
+        });
+
+        document.querySelectorAll('.skill-bar').forEach(skillBar => {
+            const percent = skillBar.dataset.percent;
+            skillBar.style.width = percent;
+        });
+    </script>
+</body>
+</html>
